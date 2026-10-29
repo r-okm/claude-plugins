@@ -37,8 +37,13 @@ it directly instead. This copy stays on that machine only:
 
 ## Release a change
 
-Edit the skill, bump `version` on the plugin entry in
-`.claude-plugin/marketplace.json`, run `claude plugin validate .`, commit, push.
-Cowork detects updates from the marketplace entry's `version`; without the bump
-the update button stays greyed out. `plugin.json` carries no `version` on
-purpose, so the two never disagree.
+Edit the skill, run `claude plugin validate .`, commit, push. Neither
+`plugin.json` nor the marketplace entry sets `version`, so every commit is a
+release: Claude Code takes the plugin directory's commit SHA as its version.
+`claude plugin validate` warns that `plugin.json` has no `version`; that is
+expected.
+
+On claude.ai, "Sync automatically" is known not to fire on push for personal
+marketplaces
+([anthropics/claude-code#93825](https://github.com/anthropics/claude-code/issues/93825)).
+Select **Check for updates** on the marketplace after pushing.
