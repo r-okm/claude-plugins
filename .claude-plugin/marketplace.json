@@ -8,7 +8,8 @@
     {
       "name": "r-okm",
       "source": "./plugins/r-okm",
-      "description": "Skills r-okm uses across claude.ai, Cowork, and Claude Code"
+      "description": "Skills r-okm uses across claude.ai, Cowork, and Claude Code",
+      "version": "0.1.0"
     }
   ]
 }

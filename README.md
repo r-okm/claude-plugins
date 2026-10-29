@@ -37,11 +37,15 @@ it directly instead. This copy stays on that machine only:
 
 ## Release a change
 
-Edit the skill, run `claude plugin validate .`, commit, push. Neither
-`plugin.json` nor the marketplace entry sets `version`, so every commit is a
-release: Claude Code takes the plugin directory's commit SHA as its version.
-`claude plugin validate` warns that `plugin.json` has no `version`; that is
-expected.
+Edit the skill, run `claude plugin validate .`, and commit. To release, bump
+`version` on the plugin entry in `.claude-plugin/marketplace.json` in a commit
+of its own, then push.
+
+claude.ai keys its plugin versions on that string. With no `version`, Check for
+updates kept showing the last recorded version and its files instead of the
+pushed commit, and the version history had no entry per commit.
+`plugin.json` carries no `version` on purpose, so the two never disagree;
+`claude plugin validate` warns about it, which is expected.
 
 On claude.ai, "Sync automatically" is known not to fire on push for personal
 marketplaces
