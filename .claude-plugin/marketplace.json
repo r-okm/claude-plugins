@@ -9,7 +9,7 @@
       "name": "r-okm",
       "source": "./plugins/r-okm",
       "description": "Skills r-okm uses across claude.ai, Cowork, and Claude Code",
-      "version": "0.2.0"
+      "version": "0.2.1"
     }
   ]
 }
